@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunia Kecil Milik Tuan Putri Cayin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">Cayin</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">Tentang Aku</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Buka Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1>Halo! Ini Dunia Kecil Milik Tuan Putri Cayin</h1>
+                <p>Seorang pemimpi, pencinta matcha, dan penjelajah momen-momen kecil.</p>
+                <a href="#about" class="cta-button">Kenali Lebih Jauh</a>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <h2>Sedikit Tentang Aku</h2>
+            <div class="about-content">
+                <img src="img/3.jpg" alt="Foto Cayin" class="profile-pic">
+                <div class="about-text">
+                    <p>Selamat datang di duniaku! Aku adalah orang yang percaya bahwa kebahagiaan bisa ditemukan dalam secangkir teh hangat di pagi hari, alunan musik yang pas, dan tawa bersama orang-orang tersayang.</p>
+                    <h3>5 Fakta Unik!</h3>
+                    <ul class="fun-facts">
+                        <li>Nama Lengkap : Catherine Tyshealey Azzevoyyige Zhao</li>
+                        <li>Umur : 17 tahun</li>
+                        <li>Hobi : Menyanyi</li>
+                        <li>Makanan favorit : Pasta</li>
+                        <li>Minuman favorit : Lemontea</li>
+                        <li>Buah-buahan favorit : Strawberry</li>
+                        <li>Pacar : -</li>
+                        <li><span>☕</span> Bisa menghabiskan waktu berjam-jam di coffee shop.</li>
+                        <li><span>🐱</span> Ibu dari seekor kucing oren bernama Miko.</li>
+                        <li><span>🎶</span> Lagu Favorit adalah Kiss, Vegaboys.</li>
+                        <li><span>✈️</span> Punya mimpi keliling semua provinsi di Indonesia.</li>
+                        <li><span>🎨</span> Sedang belajar melukis dengan cat air.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="container">
+            <h2>Galeri Momen</h2>
+            <p class="subtitle">Kumpulan kenangan yang berhasil tertangkap kamera.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="img/1.jpg" alt="Foto jalan-jalan"></div>
+                <div class="gallery-item"><img src="img/2.jpg" alt="Foto kuliner"></div>
+                <div class="gallery-item"><img src="img/3.jpg" alt="Foto hobi"></div>
+                <div class="gallery-item"><img src="img/4.jpg" alt="Foto OOTD"></div>
+                <div class="gallery-item"><img src="img/5.jpg" alt="Foto momen random"></div>
+                <div class="gallery-item"><img src="img/6.jpg" alt="Foto teman-teman"></div>
+                <div class="gallery-item"><img src="img/7.jpg" alt="Foto teman-teman"></div>
+                <div class="gallery-item"><img src="img/8.jpg" alt="Foto teman-teman"></div>
+                <div class="gallery-item"><img src="img/9.jpg" alt="Foto teman-teman"></div>
+                <div class="gallery-item"><img src="img/10.jpg" alt="Foto teman-teman"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h3>Yuk, Terhubung!</h3>
+            <p>Temukan aku di media sosial lainnya.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/catherinetyshley?igsh=OWc2bmZhbHR4OXVm">Instagram</a>
+                <a href="https://www.tiktok.com/@catherinetyshley?_t=ZS-8xfTZaNyM5p&_r=1">TikTok</a>
+            </div>
+            <p class="copyright">&copy; 2025 Dibuat dengan ❤️ untuk Cayin</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Efek header saat scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fungsionalitas Menu Hamburger
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

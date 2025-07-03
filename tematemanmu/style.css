@@ -1,0 +1,366 @@
+/* --- Pengaturan Dasar & Variabel Warna --- */
+:root {
+    --bg-color: #FFF8F0;
+    --text-color: #5C5C5C;
+    --primary-accent: #FFBFA9; /* Peach Sorbet */
+    --secondary-accent: #AEE5D8; /* Mint Lembut */
+    --highlight-color: #FFDACC;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-accent);
+}
+
+/* --- Header / Navigasi --- */
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.4s ease, padding 0.4s ease;
+    padding: 20px 0;
+    /* PERBAIKAN: Gradien lembut agar teks terbaca di atas gambar hero */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
+}
+
+#main-header.scrolled {
+    background-color: rgba(255, 248, 240, 0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 0;
+}
+
+/* PERBAIKAN: Warna logo dan nav saat di atas hero */
+#main-header .logo, #main-header nav a {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#main-header.scrolled .logo, #main-header.scrolled nav a {
+    color: var(--primary-accent);
+    text-shadow: none;
+}
+
+#main-header.scrolled nav a {
+    color: var(--text-color);
+}
+
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.8em;
+    font-weight: 700;
+    transition: color 0.4s ease;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.4s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --- Tombol Hamburger (Hanya tampil di mobile) --- */
+#menu-toggle {
+    display: none; /* Sembunyi di desktop */
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white; /* Warna awal ikon */
+    z-index: 1001;
+    transition: color 0.4s ease;
+}
+#main-header.scrolled #menu-toggle {
+    color: var(--text-color); /* Warna ikon setelah scroll */
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 0 20px;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1508615039623-a25605d2b022?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    filter: brightness(0.6);
+    z-index: -1;
+}
+
+.hero-content {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#hero h1 {
+    font-size: 4em;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+#hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 20px auto 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Bagian Umum --- */
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1em;
+    color: #999;
+}
+
+/* --- Tentang Aku --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.profile-pic {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px var(--highlight-color);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.fun-facts {
+    list-style: none;
+    padding: 0;
+}
+
+.fun-facts li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.fun-facts span {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: var(--primary-accent);
+}
+
+/* --- Galeri Momen --- */
+.gallery-grid {
+    columns: 3;
+    column-gap: 15px;
+}
+
+.gallery-item {
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-accent);
+    color: var(--text-color);
+    text-align: center;
+    padding: 50px 0;
+}
+
+footer h3 {
+    color: white;
+    font-size: 2em;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: rgba(0,0,0,0.5);
+}
+
+/* --- Responsif untuk Mobile --- */
+@media (max-width: 768px) {
+    /* Penyesuaian Ukuran Font & Padding */
+    h2 { font-size: 2.2em; }
+    section { padding: 60px 0; }
+
+    /* Penyesuaian Hero Section */
+    #hero h1 { font-size: 2.5em; }
+    #hero p { font-size: 1.1em; }
+    
+    /* Tampilkan Tombol Hamburger & Atur Navigasi Mobile */
+    #menu-toggle {
+        display: block;
+    }
+    #menu-toggle.active {
+        /* Opsi: Ubah ikon ke 'X' saat menu aktif */
+        content: '×'; 
+    }
+
+    nav#main-nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    nav#main-nav.active {
+        transform: translateX(0);
+    }
+
+    nav#main-nav ul {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    nav#main-nav a {
+        color: var(--text-color); /* Pastikan link terbaca di background mobile nav */
+        font-size: 1.5em;
+        text-shadow: none;
+    }
+
+    /* Penyesuaian Layout Lainnya */
+    .about-content { 
+        flex-direction: column; 
+        text-align: center;
+    }
+    .fun-facts li {
+        justify-content: center;
+    }
+
+    .gallery-grid { 
+        columns: 2; 
+    }
+    
+    /* Merapikan link di footer */
+    .social-links a {
+        display: block;
+        margin: 10px auto;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        columns: 1; /* Cukup 1 kolom untuk layar sangat kecil */
+    }
+    #hero h1 {
+        font-size: 2em;
+    }
+}
